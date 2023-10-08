@@ -10,7 +10,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter basename="/goit-react-hw-08-phonebook">
+      <BrowserRouter basename="/goit-react-hw-08-phonebook/login">
         <CssBaseline />
         <Provider store={store}>
           <App />
