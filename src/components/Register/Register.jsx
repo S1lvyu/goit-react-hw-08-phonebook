@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { getIsAuthenticated, getUserError } from 'redux/selectors';
 import { registerUser } from 'redux/operations';
+import registerBackground from '../../images/register-background.jpg';
 
 export default function Register() {
   const [email, setEmail] = useState('');
@@ -45,60 +46,69 @@ export default function Register() {
   }, [isAuth, navigate]);
   return (
     <Box
-      component="form"
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '20px',
-        margin: 'auto',
-        width: '300px',
+        backgroundImage: `url(${registerBackground})`,
+        height: '100vh',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
       }}
-      onSubmit={handleSubmit}
     >
-      <Typography
-        variant="h1"
+      <Box
+        component="form"
         sx={{
-          fontSize: '30px',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          color: 'blue',
-          marginTop: '100px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '20px',
+          margin: 'auto',
+          width: '300px',
         }}
+        onSubmit={handleSubmit}
       >
-        Register
-      </Typography>
-      <TextField
-        id="outlined-basic"
-        label="Email"
-        variant="outlined"
-        name="email"
-        type="email"
-        value={email}
-        onChange={handleChangeInput}
-        required
-      />
-      <TextField
-        label="Name"
-        variant="outlined"
-        name="name"
-        type="name"
-        onChange={handleChangeInput}
-        required
-      />
-      <TextField
-        label="Password"
-        variant="outlined"
-        name="password"
-        type="password"
-        onChange={handleChangeInput}
-        required
-      />
-      <Button type="submit" variant="contained">
-        Register
-      </Button>
-      <Typography variant="p">
-        You already have an account? <Link to="/login">Click here!</Link>
-      </Typography>
+        <Typography
+          variant="h1"
+          sx={{
+            fontSize: '30px',
+            fontWeight: 'bold',
+            textAlign: 'center',
+            color: 'blue',
+            marginTop: '100px',
+          }}
+        >
+          Register
+        </Typography>
+        <TextField
+          id="outlined-basic"
+          label="Email"
+          variant="outlined"
+          name="email"
+          type="email"
+          value={email}
+          onChange={handleChangeInput}
+          required
+        />
+        <TextField
+          label="Name"
+          variant="outlined"
+          name="name"
+          type="name"
+          onChange={handleChangeInput}
+          required
+        />
+        <TextField
+          label="Password"
+          variant="outlined"
+          name="password"
+          type="password"
+          onChange={handleChangeInput}
+          required
+        />
+        <Button type="submit" variant="contained">
+          Register
+        </Button>
+        <Typography variant="p">
+          You already have an account? <Link to="/login">Click here!</Link>
+        </Typography>
+      </Box>
     </Box>
   );
 }

@@ -41,11 +41,11 @@ export default function MenuBar() {
   const handleLogout = async () => {
     await dispatch(logoutUser(userToken));
 
-    navigate('/login');
+    navigate('/');
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" sx={{ backgroundColor: 'green' }}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <div
             style={{

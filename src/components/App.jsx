@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import PrivateRoutes from 'PrivateRoutes/PrivateRoutes';
 import Loader from './Loader/Loader';
-
+import HomePage from './HomePage/HomePage';
 import { Routes, Route } from 'react-router-dom';
 
 export const App = () => {
@@ -13,6 +13,7 @@ export const App = () => {
     <div>
       <Suspense fallback={<Loader />}>
         <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route element={<PrivateRoutes />}>
