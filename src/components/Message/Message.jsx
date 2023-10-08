@@ -1,9 +1,5 @@
 import React from 'react';
-
+import styles from './Message.module.css';
 export default function Message({ message }) {
-  return (
-    <p style={{ margin: '20px auto', fontWeight: 'bold', fontSize: '20px' }}>
-      {message}
-    </p>
-  );
+  return <p className={styles.message}>{message}</p>;
 }
